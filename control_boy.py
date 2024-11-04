@@ -3,6 +3,7 @@ import random
 import game_world
 from grass import *
 from boy import *
+from front_grass import *
 
 def handle_events():
     global running
@@ -21,6 +22,7 @@ def reset_world():
     global running
     global grass
     global boy
+    global front_grass
 
     running = True
 
@@ -29,6 +31,9 @@ def reset_world():
 
     boy = Boy() # 영속 객체
     game_world.add_object(boy, 1)
+
+    front_grass = FrontGrass()
+    game_world.add_object(front_grass, 2)
 
 def update_world():
     game_world.update_world()
